@@ -25,6 +25,7 @@ while (!validMonth) {
         if (!months.includes(birthMonth)) {
             birthMonth = prompt('Not a valid month name, please type the full name of the month or use a valid month number:').toLowerCase();
         } else {
+            birthMonth = months.indexOf(birthMonth);
             validMonth = true;
         }
     } else {
@@ -32,11 +33,13 @@ while (!validMonth) {
         if (months[birthMonth - 1] === undefined) {
             birthMonth = prompt('Not a valid month number, please type a valid month number or use the full name of the month:').toLowerCase();
         } else {
-            birthMonth = months[birthMonth - 1];
+            birthMonth = birthMonth - 1;
             validMonth = true;
         }
     }
 }
+
+console.log(birthMonth);
 
 function chineseZodiac(year) {
     const animals = [
@@ -48,6 +51,8 @@ function chineseZodiac(year) {
     const animal = animals[index < 0 ? index + 12 : index];
     return `Your Chinese Zodiac sign is year of the ${animal}`;
 }
+
+
 
 const randomFact = [chineseZodiac(birthYear)];
 
