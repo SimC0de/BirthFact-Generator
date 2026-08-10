@@ -39,7 +39,20 @@ while (!validMonth) {
     }
 }
 
-console.log(birthMonth);
+const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+let birthDay = Number(prompt('Enter your birth day:'));
+validMonthDay = false;
+while (!validMonthDay) {
+    if ((birthDay === 29) && (birthMonth === 1)) {
+        birthDay = Number(prompt('Not a valid birth day for the month, unless it\'s the leap year... which I haven\'t configured yet, stick to 28 or less days for now:'));
+        console.log(months[birthMonth])
+    } else if ((birthDay > daysInMonths[birthMonth]) || (birthDay < 0)) {
+        birthDay = Number(prompt('Not a valid birth day for the month, please enter a valid one:'));
+        console.log(months[birthMonth])
+    } else {
+        validMonthDay = true;
+    }
+}
 
 function chineseZodiac(year) {
     const animals = [
