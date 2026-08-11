@@ -86,7 +86,7 @@ function zodiacConstellation(month, day) {
         constellation = "Pisces";
     }
 
-    return `Your Zoadiac Sign is ${constellation}`;
+    return `Your Zodiac Sign is ${constellation}`;
 }
 
 function chineseZodiac(year) {
@@ -102,8 +102,7 @@ function chineseZodiac(year) {
 
 
 
-const randomFact = [chineseZodiac(birthYear),];
+const randomFact = [chineseZodiac(birthYear), zodiacConstellation(birthMonth, birthDay)];
 
 console.log(randomFact[Math.floor(Math.random() * randomFact.length)]);
-console.log(zodiacConstellation(birthMonth, birthDay));
 
