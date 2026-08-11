@@ -13,7 +13,7 @@ if (userAge <= 12 || userAge >= 80) {
 }
 
 // prompts the user to enter their birth month by name or number
-let birthMonth = prompt('Enter your birth month by month name (e.g."June") or month number (e.g. "6"):').toLowerCase();
+let birthMonth = prompt('Enter your birth month:').toLowerCase();
 
 // checks if the month provided by the user is valid
 let validMonth = false;
@@ -45,10 +45,8 @@ validMonthDay = false;
 while (!validMonthDay) {
     if ((birthDay === 29) && (birthMonth === 1)) {
         birthDay = Number(prompt('Not a valid birth day for the month, unless it\'s the leap year... which I haven\'t configured yet, stick to 28 or less days for now:'));
-        console.log(months[birthMonth])
     } else if ((birthDay > daysInMonths[birthMonth]) || (birthDay < 0)) {
         birthDay = Number(prompt('Not a valid birth day for the month, please enter a valid one:'));
-        console.log(months[birthMonth])
     } else {
         validMonthDay = true;
     }
@@ -60,29 +58,29 @@ function zodiacConstellation(month, day) {
         "Leo", "Virgo", "Libra", "Scorpius",
         "Sagittarius", "Capricornus", "Aquarius", "Pisces"]
     let constellation = "";
-    if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+    if ((month === 2 && day >= 21) || (month === 3 && day <= 19)) {
         constellation = "Aries";
-    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+    } else if ((month === 3 && day >= 20) || (month === 4 && day <= 20)) {
         constellation = "Taurus";
-    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
+    } else if ((month === 4 && day >= 21) || (month === 5 && day <= 21)) {
         constellation = "Gemini";
-    } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
+    } else if ((month === 5 && day >= 22) || (month === 6 && day <= 22)) {
         constellation = "Cancer";
-    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+    } else if ((month === 6 && day >= 23) || (month === 7 && day <= 22)) {
         constellation = "Leo";
-    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
         constellation = "Virgo";
-    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 23)) {
         constellation = "Libra";
-    } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
+    } else if ((month === 9 && day >= 24) || (month === 10 && day <= 21)) {
         constellation = "Scorpio";
-    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+    } else if ((month === 10 && day >= 22) || (month === 11 && day <= 21)) {
         constellation = "Sagittarius";
-    } else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+    } else if ((month === 11 && day >= 22) || (month === 0 && day <= 19)) {
         constellation = "Capricorn";
-    } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+    } else if ((month === 0 && day >= 20) || (month === 1 && day <= 18)) {
         constellation = "Aquarius";
-    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+    } else if ((month === 1 && day >= 19) || (month === 2 && day <= 20)) {
         constellation = "Pisces";
     }
 
